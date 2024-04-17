@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root{
+    --primary-color: black;
+    --text-color: white;
+}
+
+body{
+    min-height: 100vh;
+    background-color: white;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex-grow: 1;
+}
+
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    padding: 1rem 1rem;
+    z-index: 2;
+    
+}
+
+footer{
+    border-top: 2px solid black;
+    display: block;
+}
+section{
+    margin-bottom: 10px;
+}
+
+.fcontainer{
+    background-color: grey;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-block-end: auto;
+    margin-inline-start: auto;
+}
+.fcontainer-fluid{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.info{
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-end: -15px;
+    margin-inline-start: -15px;
+}
+.finfodiv{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+}
+.finfodiv{
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.copyright{
+    background-color: rgb(97, 97, 97);
+    text-align: center;
+
+}
+.b1{
+    margin-bottom: 50px;
+}
+.initialInfo{
+    min-height: 20rem;
+    background-color: rgba(0, 0, 0, 0.767);
+    background-image: url(../resursi/izlozba_oldtimera_rijeka_fa_ri__14__01_w1200.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.content{
+    margin-bottom: 10px;
+}
+.initialInfo h1{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.979);
+    font-size: 100px;
+    padding-top: 5rem;
+    font-family:sans-serif;
+}
+
+.initialInfo p{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.884);
+    padding-top: 1rem;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.news{
+    background-color: rgba(0, 0, 0, 0.123);
+}
+
+.map{
+    width: 100%;
+    height: 350px;
+}
+.Description{
+    background-color: rgba(0, 0, 0, 0.096);
+    width: 100%;
+}
+.about{
+    display: flex;
+}
+
+.googlemap{
+    width: 100%;
+    height: 100%;
+}
+.filler{
+    width: 100%;
+}
+@media(max-width :1046px)
+{
+    .about{
+        flex-direction: column;
+    }
+    .map{
+        
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        width: 100%;
+    }
+    .Description{
+        width: 100%;
+    }
+    .googlemap{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+
+
+
+
+@media (min-width : 700px)
+{
+    .c1{
+        -webkit-box-flex: 0;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media(min-width:800px)
+{
+    .l1{
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+
+
+.logo{
+    position: absolute;
+    top: 50%;
+    
+    transform: translate(0%, -50%);
+}
+.logo img{
+    width: 240px;
+}
+
+nav{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float:right;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    
+}
+
+nav li a{
+    position: relative;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+nav li a::before{
+    content: '';
+    position: absolute;
+    bottom:-2px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width .3s ease;
+}
+
+nav li a:hover::before{
+    width: 100%;
+}
+.menu-btn{
+    display: none;
+    float: right;
+}
+@media screen and (max-width : 850px) {
+    .logo img{
+        content:url(/resursi/MOI_Zagreb_logo-240x0-c-default-Cut.png);
+        width: 100%;
+        
+    }
+}
+
+@media screen and (max-width : 700px) {
+    nav{
+        
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        height: 0px;
+        background-color: rgb(22, 22, 22);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 1;
+        overflow: hidden;
+        opacity: 0;
+        transition: height .5s ease-in-out;
+        
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+        gap:2rem;
+
+    }
+
+    nav li a{
+        font-size: 1.2rem;
+    }
+
+
+    .logo{
+        left:2rem;
+        transform: translate(0,-50%);
+    }
+
+    .logo img{
+        width: 70px;
+    }
+    .menu-btn{
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .menu-btn span{
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        transform-origin: left;
+        transition: 0.5s ease;
+    }
+
+    .menu-btn input{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        z-index: 2;
+        cursor: pointer;
+        appearance: none;
+
+    }
+
+    .menu-btn input:checked ~ .second-line{
+        opacity: 0;
+    }
+
+    .menu-btn input:checked ~ .first-line{
+        transform: rotate(45deg);
+    }
+
+    .menu-btn input:checked ~ .third-line{
+        transform: rotate(-45deg);
+    }
+    header:has(input:checked) > nav{
+        height: calc(50vh - 80%);
+        opacity: 1;
+    }
+    
+}

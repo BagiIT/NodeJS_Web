@@ -1,0 +1,68 @@
+.M_logo_img{
+    width: 60px;
+}
+.M_logo_container{
+    width: 60px;
+    display: inline-block;
+}
+
+.Navi_bar{
+    display: inline-block;
+    float: right;
+}
+
+@media screen and (max-width:600px){
+    .Navi_bar{    
+        display: none;;
+    }
+}
+@media screen and (min-width:600px){
+    
+    .Navi_btn{
+        display: none;
+    }
+}
+
+
+
+.header{
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgb(97, 97, 97);
+}
+
+.Navi_bar ul{
+    list-style-type: none;
+    background-color: hsl(0, 0%, 50%);
+    padding: 0px;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.Navi_bar a{
+    color: white;
+    background-color: hwb(0 34% 65% / 0.808);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.Navi_bar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+
+.Navi_bar li{
+    display: list-item;
+    padding: 5px;
+}
+
+.main{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    background-color: grey;
+    
+}
