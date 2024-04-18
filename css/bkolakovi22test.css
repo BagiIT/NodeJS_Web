@@ -5,6 +5,11 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    background-color: initial;
+}
+
 :root{
     --primary-color: black;
     --text-color: white;
@@ -93,8 +98,13 @@ section{
     background-blend-mode: multiply;
 }
 .content{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+
+.cards{
+    margin-top: 50px;
+}
+
 .initialInfo h1{
     text-align: center;
     color: rgba(255, 255, 255, 0.979);
@@ -177,6 +187,27 @@ section{
         flex: 0 0 25%;
         max-width: 25%;
     }
+}
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline-end: -15px;
+    margin-inline-start: -15px;
+}
+
+.cards{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+}
+.c-card_text a{
+    color: aqua;
+    font-weight: 700;
 }
 
 
