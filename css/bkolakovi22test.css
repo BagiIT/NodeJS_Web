@@ -559,6 +559,7 @@ label>ul{
     float : right;
     padding-top: 5px;
 }
+
 @media screen and (min-width :1024px) {
     
 .galery-card-item a{
@@ -580,8 +581,8 @@ label>ul{
     display: flex;
     flex-direction: column;
 }
-.galery-card a,.galery-card img{
-    flex: 1;
+.galery-card-item a,.galery-card, .galery-card img{
+    flex-grow: 1;
 }
 .galery-card img{
     object-fit: cover;
@@ -592,6 +593,7 @@ label>ul{
     position: relative;
 }
 
+
 .galery-card-item{
     overflow: hidden;
     border-radius: 15px;
@@ -600,8 +602,10 @@ label>ul{
 
 .galery-card figcaption
 {
-    font-size: 1.5rem;
-    color: white;
+    font-size: auto;
+    font-weight: 600;
+    padding-top: 40px;
+    color: rgb(255, 255, 255);
     position: absolute;
     top: 0;
     right: 0;
@@ -624,8 +628,6 @@ label>ul{
 
 }
 @media screen and (max-width:1024px) {
-    
-
 
 .image-grid{
     display: flex;
@@ -653,6 +655,8 @@ label>ul{
     text-decoration: none;
     font-weight: 600;
     font-style: italic;
+    font-size: 20px;
+    color: rgb(32, 31, 31);
 
 }
 
