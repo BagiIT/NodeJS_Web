@@ -1,8 +1,15 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+}
+
+*::after,*::before
+{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 a{
@@ -13,6 +20,7 @@ a{
 :root{
     --primary-color: black;
     --text-color: white;
+    box-sizing: border-box;
 }
 
 body{
@@ -551,4 +559,101 @@ label>ul{
     float : right;
     padding-top: 5px;
 }
+@media screen and (min-width :1024px) {
+    
+.galery-card-item a{
+    text-decoration: none;
+}
+.image-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20em,1fr));
+    grid-auto-rows: auto;
+    gap: 2em;
+    padding: 2em;
+}
 
+.image-grid img{
+    max-width: 100%;
+}
+
+.galery-card-item, .galery-card-item a, .galery-card{
+    display: flex;
+    flex-direction: column;
+}
+.galery-card a,.galery-card img{
+    flex: 1;
+}
+.galery-card img{
+    object-fit: cover;
+    transition: 200ms transform ease-in-out;
+}
+
+.galery-card{
+    position: relative;
+}
+
+.galery-card-item{
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+}
+
+.galery-card figcaption
+{
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    
+    transition: 200ms background-color ease-in-out;
+}
+.galery-card:hover figcaption
+{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.644);
+}
+.galery-card:hover img{
+    transform: scale(1.2);
+}
+
+}
+@media screen and (max-width:1024px) {
+    
+
+
+.image-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 15px;
+}
+.galery-card-item, .galery-card-item a, .galery-card{
+    display: flex;
+    flex-direction: column;
+}
+.galery-card-item{
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: rgba(46, 46, 46, 0.219);
+    border-radius: 10px;
+}
+.galery-card img{
+    padding: 5px;
+    border-radius: 15px;
+}
+.galery-card figcaption{
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+
+}
+
+}
