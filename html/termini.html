@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <title>Termini Page</title>
+        <link rel="stylesheet" type="text/css" href="../css/bkolakovi22test.css">
+        <script src="./js/bkolakovi22.js"></script>
+        <meta charset="UTF-8">
+        <meta name = "author" content="Bartol Kolakovic">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../resursi/MOI_Zagreb_logo-240x0-c-default (1).png" alt="HomePage">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li> <a href="../index.html">Home</a> </li>
+                        <li> <a href="../html/dokumentacija.html">Dokumentacija</a> </li>
+                        <li> <a href="../html/oAutoru.html">O Autoru</a> </li>
+                        <li> <a href="../html/kontakt.html">Kontakt</a> </li>
+                        <li> <a href="../html/galerija.html">Galerija</a> </li>
+                        <li> <a href="../html/termini.html">Termini</a> </li>
+                    </ul>
+                </nav>
+
+                <div class="btn menu-btn">
+                    <input type="checkbox" />
+                    <span class="first-line"></span>
+                    <span class="second-line"></span>
+                    <span class="third-line"></span>
+                </div>
+            </header>
+
+            <section class="content">
+                <form method="post" action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" oninput="x.value=parseInt(iskustvo.value)" id="terming-form">
+                    <fieldset id="osobne-info">
+                        <label for="ime">Ime:<input type="text" id="ime" name="ime"></label>
+                        <label for="prezime">Prezime:
+                        <input type="password" id="prezime" name="prezime">
+                        </label>
+                        <label for="email">Email:
+                            <input type="email" id="email" name="email">
+                        </label>
+                        <label for="kontakt">Kontakt broj:
+                            <input type="tel" id="konaktBr" name="konaktBr" placeholder="0991231234" pattern="[0-9]{10}">
+                        </label>
+                        <label for="tip_Osobe">Osoba:
+                            <ul>
+                                <li>
+                                    <input class="radio" type="radio" name="tip_Osobe" value="Priv" checked>Privatno
+                                </li>
+                                <li>
+                                    <input class="radio" type="radio" name="tip_Osobe" value="Javna">Javna (Skola, Fakultet, Firma)
+                                </li>
+                            </ul>
+                            
+                           
+                        </label>    
+                    </fieldset> 
+                       
+                    <fieldset id="termin-info">
+                        <label for="datum_termin">Datum termina:
+                    <input type="date" id="datum_termin" name="datum_termin" value="2024-04-19" min="2024-01-01" max="2025-12-31">
+                    </label>
+                    <br>
+                    <label for="posebnePotrebe"> Posebne potrebe:
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="posebnePotrebe[]" value="WC">Kolica nemoze hodat
+                            </li>
+                            <li>
+                                <input type="checkbox" name="posebnePotrebe[]" value="GZ">Glasni zvukovi probmei
+                            </li>
+                            <li>
+                                <input type="checkbox" name="posebnePotrebe[]" value="BP">Problemi s vidom
+                            </li>
+                        </ul>
+                
+                    </label>
+                    <br>
+                    <br>
+                    <label for="posebniZahtjevi">Zahtjeiv:
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="posebniZahtjevi[]" value="VD">Vodic
+                            </li>
+                            <li>
+                                <input class="radio" type="radio" name="posebniZahtjevi[]" value="SM">Sami u galeriji
+                            </li>
+                            <li>
+                                <input class="radio" type="radio" name="posebniZahtjevi[]" value="SV" checked>S drugima u galeriji
+                            </li>
+                        </ul>
+                    
+                    
+                    
+                    </label>
+                    <br>
+                    <br>
+                    <br>
+                    <label for="program">Izaberi program
+                    <select name="program">
+                        <option value="SVE">Svi programi (Cijeli paket)</option>
+                        <option value="SOI">Interaktivna Soba</option>
+                        <option value="WTH">Walk throug</option>
+                    </select>
+                    </label>
+                    <label for="event">Izaberi vrstu grupe
+                    <select name="event" id="event">
+                        <optgroup label="Male Grupe">
+                            <option value="small1">1-4 Osoba</option>
+                            <option value="small2">4-6 Osoba</option>
+                            <option value="small3">6-8 Osoba</option>
+                        </optgroup>
+                        <optgroup label="Velike Grupe">
+                            <option value="big1">8-12 Osoba</option>
+                            <option value="big2">12-20 Osoba</option>
+                            <option value="big3">20-30 Osoba</option>
+                        </optgroup>
+                    </select>
+                    </label>
+                    <textarea name="message" rows="4" cols="40" class="input-text"></textarea>
+                    
+                    </fieldset>
+                    <fieldset id="feedback-info">
+                        1<input type="range" name="iskustvo" min="1" max="5" value="2.5">5
+                    <output name="x" for="iskustvo"> 3 </output>
+                    <input type="submit" value="Posalji">
+                    <input type="reset" value="Resetiraj formu">
+
+                </fieldset>
+                </form>
+            </section>
+        
+        </main>
+        <footer>
+            <div class="fcontainer">
+                <div class="fcontainer fcontainer-fluid">
+                    <div class="info">
+                        <div class="finfodiv c1 l1 b1">
+                            <img src="../resursi/MOI_Zagreb_logo-240x0-c-default-Cut.png">
+                        </div>
+                        <div class="finfodiv c1 l1 b1">
+                            <p>
+                                Random text and info
+                            </p>
+                            <p>Email:</p>
+                        </div>
+                        <div class="finfodiv c1 l1 b1">
+                            <p>
+                                Some other random info that is needed
+                                <br>
+                                Phone : +385 00000000
+                            </p>
+                        </div>
+                        <div class="finfodiv c1 l1 b1">
+                            <p>
+                                Some other random info that is needed
+                                <br>
+                                Phone : +385 00000000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="fcontainer copyright">
+                <div class="fcontainer fcontainer-fluid copyright">
+                    <p>
+                        Random copyright stuff that is needed about foi and css validator and html validator
+                        <br>
+                        &copy;Bartol Kolakovic
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    
+</html>
