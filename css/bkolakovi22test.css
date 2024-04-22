@@ -1,3 +1,6 @@
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -42,7 +45,7 @@ header{
     top: 0;
     width: 100%;
     height: 80px;
-    background-color: black;
+    background-color: #2b3035;
     padding: 1rem 1rem;
     z-index: 2;
     display: block;
@@ -59,7 +62,7 @@ header{
     
 }
 footer{
-    border-top: 2px solid black;
+    border-top: 2px solid #2b3035;
     display: block;
 }
 section{
@@ -67,7 +70,7 @@ section{
 }
 
 .fcontainer{
-    background-color: grey;
+    background-color: #2b3035;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -98,18 +101,66 @@ section{
     margin-bottom: 50px;
 }
 
-.copyright{
-    background-color: rgb(97, 97, 97);
-    text-align: center;
+.copyrightContainer{
+    background-color: rgb(33,37,41);
+    text-align: left;
+    padding-left: 15px;
+    flex-direction: row;
+    display: flex;
 
 }
+.copyrighttext
+{
+    width: 600px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.copyright{
+    width: 90%;
+}
+
+.socials
+{
+    width: 10%;
+    align-items: center;
+    display: flex;
+}
+.socialIcons
+{
+    width: auto;
+    margin-left: 5px;
+    float :right;
+}
+
+.socialsIcons svg
+{
+    float:right;
+}
+
+
+@media (max-width:800px) {
+    .copyrightContainer
+    {
+        flex-direction: column;
+    }
+    .socials{
+        width: 50%;
+        display: inline;
+    }
+    
+    
+}
+
+
 .b1{
     margin-bottom: 50px;
 }
 .initialInfo{
     min-height: 20rem;
     background-color: rgba(0, 0, 0, 0.767);
-    background-image: url(../resursi/izlozba_oldtimera_rijeka_fa_ri__14__01_w1200.jpg);
+    background-image: url(../resursi/izlozboldtimera_rijeka_fa_ri__14__01_w1200.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -131,27 +182,40 @@ section{
     object-fit: cover;
     transition: transform .8s;
 }
+
+
 .A_container{
-    display: flex;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+    display: inline-block;
+    margin: 10px;
     margin-left: 20px;
-    margin-top: 10px;
     margin-right: 20px;
+    padding: 5px;
     border-width: 4px;
     border-radius: 15px;
+    width: 80%;
     background-color: rgba(65, 65, 65, 0.349);
 }
 
-.A_about{
-    width: 100%
+.about_content{
+    display: flex;
+    justify-content: center;
 }
+
+
+.A_about{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .A_profP{
     width: 200px;
+    height: 200px;
     float: right;
     
+}
+.A_profP img{
+    max-width: 100%;
 }
 .Profile_picture{
     max-width: 200px;
@@ -249,6 +313,7 @@ section{
         flex: 0 0 50%;
         max-width: 50%;
     }
+    
 }
 @media(min-width:800px)
 {
@@ -256,6 +321,7 @@ section{
         flex: 0 0 25%;
         max-width: 25%;
     }
+    
 }
 
 
@@ -417,6 +483,10 @@ nav li a:hover::before{
     header:has(input:checked) > nav{
         height: calc(50vh - 80%);
         opacity: 1;
+    }
+    .copyrighttext
+    {
+        width: auto;
     }
     
 }
