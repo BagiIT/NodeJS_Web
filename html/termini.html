@@ -1,185 +1,277 @@
 <!DOCTYPE html>
 <html lang="hr">
-    <head>
-        <title>Termini</title>
-        <link rel="stylesheet" type="text/css" href="../css/bkolakovi22test.css">
-        <script src="./js/bkolakovi22.js"></script>
-        <meta charset="UTF-8">
-        <meta name = "author" content="Bartol Kolakovic">
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-    </head>
 
-    <body>
-        <main>
-            <header>
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../resursi/MOI_Zagreb_logo-240x0-c-default (1).png" alt="HomePage">
-                    </a>
-                </div>
-                <nav>
-                    <ul>
-                        <li> <a href="../index.html">Home</a> </li>
-                        <li> <a href="../html/dokumentacija.html">Dokumentacija</a> </li>
-                        <li> <a href="../html/oAutoru.html">O Autoru</a> </li>
-                        <li> <a href="../html/kontakt.html">Kontakt</a> </li>
-                        <li> <a href="../html/galerija.html">Galerija</a> </li>
-                        <li> <a href="../html/termini.html">Termini</a> </li>
-                    </ul>
-                </nav>
+<head>
+    <title>Termini</title>
+    <link rel="stylesheet" type="text/css" href="../css/bkolakovi22test.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <script src="./js/bkolakovi22.js"></script>
+    <meta charset="UTF-8">
+    <meta name="author" content="Bartol Kolakovic">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-                <div class="btn menu-btn">
-                    <input type="checkbox" />
-                    <span class="first-line"></span>
-                    <span class="second-line"></span>
-                    <span class="third-line"></span>
-                </div>
-            </header>
+<body>
+    <main>
+        <header>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../resursi/MOI_Zagreb_logo-240x0-c-default (1).png" alt="HomePage">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li> <a href="../index.html">Home</a> </li>
+                    <li> <a href="../html/dokumentacija.html">Dokumentacija</a> </li>
+                    <li> <a href="../html/oAutoru.html">O Autoru</a> </li>
+                    <li> <a href="../html/tablica.html">Tablica</a> </li>
+                    <li> <a href="../html/galerija.html">Galerija</a> </li>
+                    <li> <a href="../html/termini.html">Termini</a> </li>
+                </ul>
+            </nav>
 
-            <section class="content" id="form">
-                <form method="post" action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" oninput="x.value=parseInt(iskustvo.value)" id="terming-form">
-                    <fieldset id="osobne-info">
-                        <label for="ime">Ime:<input type="text" id="ime" name="ime"></label>
-                        <label for="prezime">Prezime:
-                        <input type="password" id="prezime" name="prezime">
-                        </label>
-                        <label for="email">Email:
-                            <input type="email" id="email" name="email">
-                        </label>
-                        <label for="kontakt">Kontakt broj:
-                            <input type="tel" id="konaktBr" name="konaktBr" placeholder="0991231234" pattern="[0-9]{10}">
-                        </label>
-                        <label for="tip_Osobe">Osoba:
-                            <ul>
-                                <li>
-                                    <input class="radio" type="radio" name="tip_Osobe" value="Priv" checked>Privatno
-                                </li>
-                                <li>
-                                    <input class="radio" type="radio" name="tip_Osobe" value="Javna">Javna (Skola, Fakultet, Firma)
-                                </li>
-                            </ul>
-                            
-                           
-                        </label>    
-                    </fieldset> 
-                       
-                    <fieldset id="termin-info">
-                        <label for="datum_termin">Datum termina:
-                    <input type="date" id="datum_termin" name="datum_termin" value="2024-04-19" min="2024-01-01" max="2025-12-31">
-                    </label>
-                    <br>
-                    <label for="posebnePotrebe"> Posebne potrebe:
-                        <ul>
-                            <li>
-                                <input type="checkbox" name="posebnePotrebe[]" value="WC">Kolica nemoze hodat
-                            </li>
-                            <li>
-                                <input type="checkbox" name="posebnePotrebe[]" value="GZ">Glasni zvukovi probmei
-                            </li>
-                            <li>
-                                <input type="checkbox" name="posebnePotrebe[]" value="BP">Problemi s vidom
-                            </li>
-                        </ul>
-                
-                    </label>
-                    <br>
-                    <br>
-                    <label for="posebniZahtjevi">Zahtjeiv:
-                        <ul>
-                            <li>
-                                <input type="checkbox" name="posebniZahtjevi[]" value="VD">Vodic
-                            </li>
-                            <li>
-                                <input class="radio" type="radio" name="posebniZahtjevi[]" value="SM">Sami u galeriji
-                            </li>
-                            <li>
-                                <input class="radio" type="radio" name="posebniZahtjevi[]" value="SV" checked>S drugima u galeriji
-                            </li>
-                        </ul>
-                    
-                    
-                    
-                    </label>
-                    <br>
-                    <br>
-                    <br>
-                    <label for="program">Izaberi program
-                    <select name="program">
-                        <option value="SVE">Svi programi (Cijeli paket)</option>
-                        <option value="SOI">Interaktivna Soba</option>
-                        <option value="WTH">Walk throug</option>
-                    </select>
-                    </label>
-                    <label for="event">Izaberi vrstu grupe
-                    <select name="event" id="event">
-                        <optgroup label="Male Grupe">
-                            <option value="small1">1-4 Osoba</option>
-                            <option value="small2">4-6 Osoba</option>
-                            <option value="small3">6-8 Osoba</option>
-                        </optgroup>
-                        <optgroup label="Velike Grupe">
-                            <option value="big1">8-12 Osoba</option>
-                            <option value="big2">12-20 Osoba</option>
-                            <option value="big3">20-30 Osoba</option>
-                        </optgroup>
-                    </select>
-                    </label>
-                    <textarea name="message" rows="4" cols="40" class="input-text"></textarea>
-                    
-                    </fieldset>
-                    <fieldset id="feedback-info">
-                        1<input type="range" name="iskustvo" min="1" max="5" value="2.5">5
-                    <output name="x" for="iskustvo"> 3 </output>
-                    <input type="submit" value="Posalji">
-                    <input type="reset" value="Resetiraj formu">
+            <div class="btn menu-btn">
+                <input type="checkbox" />
+                <span class="first-line"></span>
+                <span class="second-line"></span>
+                <span class="third-line"></span>
+            </div>
+        </header>
 
-                </fieldset>
-                </form>
-            </section>
-        
-        </main>
-        <footer>
-            <div class="fcontainer">
-                <div class="fcontainer fcontainer-fluid">
-                    <div class="info">
-                        <div class="finfodiv c1 l1 b1">
-                            <img src="../resursi/MOI_Zagreb_logo-240x0-c-default-Cut.png">
+        <section class="content" id="form">
+            <div class="container">
+                <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post">
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="fname"><strong>Ime</strong></label>
                         </div>
-                        <div class="finfodiv c1 l1 b1">
-                            <p>
-                                Random text and info
-                            </p>
-                            <p>Email:</p>
-                        </div>
-                        <div class="finfodiv c1 l1 b1">
-                            <p>
-                                Some other random info that is needed
-                                <br>
-                                Phone : +385 00000000
-                            </p>
-                        </div>
-                        <div class="finfodiv c1 l1 b1">
-                            <p>
-                                Some other random info that is needed
-                                <br>
-                                Phone : +385 00000000
-                            </p>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Ime.." required>
                         </div>
                     </div>
-                </div>
-                
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="lname"><strong>Prezime</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Prezime.." required>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="country"><strong>Država</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <select id="country" name="country" required>
+                                <option value="Cro">Hrvatska</option>
+                                <option value="Srb">Srbija</option>
+                                <option value="Bih">Bosna</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="date"><strong>Datum termina</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="date" id="date" name="date" value="" min="2024-01-01" max="20230-12-31"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="category"><strong>Iskustvo</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <select id="category" name="category" required>
+                                <option value="SI">Soba iluzija</option>
+                                <option value="BSI">Samo izlog bez sobe iluzija</option>
+                                <option value="Sve" selected>Cijeli paket</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="option"><strong>Osoba</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <div class="col-76">
+                                <label for="option1">Privatna osoba</label>
+                                <input type="radio" id="option1" name="option" value="privO" required>
+                            </div>
+                            <div class="col-76">
+                                <label for="option2">Javna osoba</label>
+                                <input type="radio" id="option2" name="option" value="javO" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="choices"><strong>Posebni Zahjevi</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <div class="col-76">
+                                <label for="choice1">Vodič</label>
+                                <input type="checkbox" id="choice1" name="choices[]" value="vodic">
+                            </div>
+                            <div class="col-76">
+                                <label for="choice2">Osoba u kolicima</label>
+                                <input type="checkbox" id="choice2" name="choices[]" value="kolica">
+                            </div>
+                            <div class="col-76">
+                                <label for="choice3">Osoba s vidnim i slušnim problemima</label>
+                                <input type="checkbox" id="choice3" name="choices[]" value="OkoUhoP">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="subcategory"><strong>Broj ljudi</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <select id="subcategory" name="subcategory" required>
+                                <optgroup label="Mala grupa">
+                                    <option value="mg1">1-3 Osoba</option>
+                                    <option value="mg2">3-5 Osoba</option>
+                                    <option value="mg3">5-7 Osoba</option>
+                                </optgroup>
+                                <optgroup label="Srednja grupa">
+                                    <option value="sg1">7-10 Osoba</option>
+                                    <option value="sg2">10-13 Osoba</option>
+                                </optgroup>
+                                <optgroup label="Velika grupa">
+                                    <option value="sg1">13-16 Osoba</option>
+                                    <option value="sg2">16-25 Osoba</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="email"><strong>Email</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="email" id="email" name="email" placeholder="Email.." required>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="phone"><strong>Broj telefona</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="tel" id="phone" name="phone" placeholder="broj telefona.."
+                                pattern="[0-9]{3}-[0-9]{1'}" required>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="subject"><strong> Poruka</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Posebna poruka.."
+                                style="height:100px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25">
+                            <label for="range"><strong>Ocjena usluge</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="range" id="range" name="range" min="1" max="5" value="2">
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <input type="submit" value="Pošalji">
+                    </div>
+                    <div class="row2">
+                        <input type="reset" value="Resetiraj">
+                    </div>
+                </form>
             </div>
-            <div class="fcontainer copyright">
-                <div class="fcontainer fcontainer-fluid copyright">
+        </section>
+
+    </main>
+    <footer>
+        <div class="fcontainer" id="formID">
+            <div class="info">
+                <div class="finfodiv c1 l1 b1">
+                    <img src="../resursi/slike/logo_muezj_malii.png" alt="">
+                </div>
+                <div class="finfodiv c1 l1 b1">
+                    <h3>
+                        <i>Kontakt</i>
+                    </h3>
+                    <p>Ilica 72, Zagreb, Hrvatska<br>M.&nbsp;<a href="tel:00385958787107">+385 95 87 87107</a><br><a
+                            href="mailto:info@muzejilizija.hr">info@muzejilizija.hr</a></p>
+
+                </div>
+                <div class="finfodiv c1 l1 b1">
+                    <h3><i>RADNO VRIJEME</i></h3>
+                    <p>SVAKI DAN<br>09:00 > 20:00 sata</p>
+                </div>
+                <div class="finfodiv c1 l1 b1">
+                    <h3><i>Cijena ulaznice</i></h3>
+                    <p>Odrasli: <strong>9 eura / 67,81 kn</strong><br>Djeca (5-15 godina):<strong>7 eura / 52,74
+                            kn</strong><br>Obiteljska (dvovje odraslih i dvovje djece):<strong>30 eura / 226,04
+                            kn</strong><br>Studenti, umirovljenici:<strong>8 eura / 60,28 kn</strong><br>Grupe (vrtić,
+                        osnovne i srednje škole):<strong>5 eura / 37,67 kn</strong><br><strong>1 EUR = 7,534550
+                            HRK</strong></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyrightContainer">
+            <div class="copyright">
+                <div class="copyrighttext fcontainer">
                     <p>
-                        Random copyright stuff that is needed about foi and css validator and html validator
-                        <br>
-                        &copy;Bartol Kolakovic
+                        Copyright© 2015 - 2019 Muzej iluzija Zagreb | Cjelokupni sadržaj, svi tekstovi i fotografije,
+                        podliježu zakonu o autorskom pravu i srodnim pravima (Broj: 01-081-03-1344/2).
+                        Zabranjeno je korištenje i/ili prenošenje sadržaja bez pismene dozvole od strane tvrtke
+                        Mozgaonica d.o.o.
                     </p>
                 </div>
             </div>
-        </footer>
-    </body>
+            <div class="socials">
 
-    
+                <div class="socialIcons">
+
+                    <a href="https://www.facebook.com/MuzejIluzija/" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/muzej_iluzija/?hl=hr" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"
+                                fill="currentColor" />
+                            <path
+                                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g294454-d8421378-Reviews-Museum_of_Illusions_Zagreb-Zagreb_Central_Croatia.html"
+                        target="_blank">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="18" class="m-1"
+                            viewBox="0 0 36 28">
+                            <title>tripadvisor</title>
+                            <path fill="#fff"
+                                d="M10.172 15.578c0 0.812-0.656 1.469-1.453 1.469-0.812 0-1.469-0.656-1.469-1.469 0-0.797 0.656-1.453 1.469-1.453 0.797 0 1.453 0.656 1.453 1.453zM28.203 15.563c0 0.812-0.656 1.469-1.469 1.469s-1.469-0.656-1.469-1.469 0.656-1.453 1.469-1.453 1.469 0.641 1.469 1.453zM11.953 15.578c0-1.656-1.359-3.016-3.016-3.016-1.672 0-3.016 1.359-3.016 3.016 0 1.672 1.344 3.016 3.016 3.016 1.656 0 3.016-1.344 3.016-3.016zM29.969 15.563c0-1.656-1.344-3.016-3.016-3.016-1.656 0-3.016 1.359-3.016 3.016 0 1.672 1.359 3.016 3.016 3.016 1.672 0 3.016-1.344 3.016-3.016zM13.281 15.578c0 2.406-1.937 4.359-4.344 4.359s-4.359-1.953-4.359-4.359c0-2.391 1.953-4.344 4.359-4.344s4.344 1.953 4.344 4.344zM31.313 15.563c0 2.406-1.953 4.344-4.359 4.344-2.391 0-4.344-1.937-4.344-4.344s1.953-4.344 4.344-4.344c2.406 0 4.359 1.937 4.359 4.344zM16.25 15.609c0-3.984-3.234-7.219-7.219-7.219-3.969 0-7.203 3.234-7.203 7.219s3.234 7.219 7.203 7.219c3.984 0 7.219-3.234 7.219-7.219zM26.688 6.656c-2.578-1.125-5.484-1.734-8.687-1.734s-6.391 0.609-8.953 1.719c4.953 0.016 8.953 4.016 8.953 8.969 0-4.859 3.859-8.813 8.687-8.953zM34.172 15.609c0-3.984-3.219-7.219-7.203-7.219s-7.219 3.234-7.219 7.219 3.234 7.219 7.219 7.219 7.203-3.234 7.203-7.219zM30.016 6.766h5.984c-0.938 1.094-1.625 2.562-1.797 3.578 1.078 1.484 1.719 3.297 1.719 5.266 0 4.953-4.016 8.953-8.953 8.953-2.812 0-5.313-1.281-6.953-3.297 0 0-0.734 0.875-2.016 2.797-0.219-0.453-1.328-2.031-2-2.812-1.641 2.031-4.156 3.313-6.969 3.313-4.937 0-8.953-4-8.953-8.953 0-1.969 0.641-3.781 1.719-5.266-0.172-1.016-0.859-2.484-1.797-3.578h5.703c3.063-2.047 7.516-3.328 12.297-3.328s8.953 1.281 12.016 3.328z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
 </html>
