@@ -1,0 +1,29 @@
+@media screen and (max-width: 800px) {
+  .tableDiv table th:nth-child(n+3),
+  .tableDiv table td:nth-child(n+3){
+    display: none;
+  }
+}
+
+.tableDiv{
+  
+  width: 50%;
+  margin: 0 auto;
+}
+.tableDiv table{
+  width: 100%;
+  border: 1px solid black;
+}
+.tableDiv table th,.tableDiv table td{
+  border: 1px solid black;
+}
+
+.tableDiv thead{
+  background-color: rgb(102, 102, 102);
+  color:rgb(255, 255, 255);
+}
+#tablica{
+  width: 100%;
+  text-align: center;
+}
+
