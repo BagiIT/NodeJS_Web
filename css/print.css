@@ -1,0 +1,15 @@
+@media print{
+  body *{
+    visibility: hidden;
+  }
+
+  .tableDiv,.tableDiv *{
+    visibility: visible;
+  }
+
+  .tableDiv{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

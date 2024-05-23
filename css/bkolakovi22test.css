@@ -388,6 +388,10 @@ section {
     font-weight: 400;
 }
 
+#g_map iframe{
+    width : 100%;
+}
+
 .inside>h3 {
     color: rgba(255, 255, 255, 0.938);
     font-size: 3.6rem;
@@ -570,7 +574,7 @@ nav li a:hover::before {
 
 @media screen and (max-width : 850px) {
     .logo img {
-        content: url(/resursi/slike/logo_muezj_malii.png);
+        content: url(../resursi/slike/logo_muezj_malii.png);
         width: 100%;
     }
 

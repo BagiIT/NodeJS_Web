@@ -16,7 +16,7 @@
         <header>
             <div class="logo">
                 <a href="../index.html">
-                    <img src="../resursi/MOI_Zagreb_logo-240x0-c-default (1).png" alt="HomePage">
+                    <img src="../resursi/slike/logo_muzej_veliki.png" alt="HomePage">
                 </a>
             </div>
             <nav>
@@ -31,7 +31,7 @@
             </nav>
 
             <div class="btn menu-btn">
-                <input type="checkbox" />
+                <input type="checkbox">
                 <span class="first-line"></span>
                 <span class="second-line"></span>
                 <span class="third-line"></span>
@@ -39,6 +39,7 @@
         </header>
 
         <section class="content" id="form">
+            <h2>Hhh</h2>
             <div class="container">
                 <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post">
                     <div class="row2">
@@ -63,6 +64,7 @@
                         </div>
                         <div class="col-75">
                             <select id="country" name="country" required>
+                                <option value="">&nbsp;Odaberite državu</option>
                                 <option value="Cro">Hrvatska</option>
                                 <option value="Srb">Srbija</option>
                                 <option value="Bih">Bosna</option>
@@ -74,7 +76,7 @@
                             <label for="date"><strong>Datum termina</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="date" id="date" name="date" value="" min="2024-01-01" max="20230-12-31"
+                            <input type="date" id="date" name="date" value="" min="2024-01-01" max="2030-12-31"
                                 required>
                         </div>
                     </div>
@@ -84,6 +86,7 @@
                         </div>
                         <div class="col-75">
                             <select id="category" name="category" required>
+                                <option value="">&nbsp;Odaberite paket</option>
                                 <option value="SI">Soba iluzija</option>
                                 <option value="BSI">Samo izlog bez sobe iluzija</option>
                                 <option value="Sve" selected>Cijeli paket</option>
@@ -92,22 +95,22 @@
                     </div>
                     <div class="row2">
                         <div class="col-25">
-                            <label for="option"><strong>Osoba</strong></label>
+                            <label><strong>Osoba</strong></label>
                         </div>
                         <div class="col-75">
                             <div class="col-76">
-                                <label for="option1">Privatna osoba</label>
-                                <input type="radio" id="option1" name="option" value="privO" required>
+                                <label for="optionO1">Privatna osoba</label>
+                                <input type="radio" id="optionO1" name="optionO" value="privO" required>
                             </div>
                             <div class="col-76">
-                                <label for="option2">Javna osoba</label>
-                                <input type="radio" id="option2" name="option" value="javO" required>
+                                <label for="optionO2">Javna osoba</label>
+                                <input type="radio" id="optionO2" name="optionO" value="javO" required>
                             </div>
                         </div>
                     </div>
                     <div class="row2">
                         <div class="col-25">
-                            <label for="choices"><strong>Posebni Zahjevi</strong></label>
+                            <label><strong>Posebni Zahjevi</strong></label>
                         </div>
                         <div class="col-75">
                             <div class="col-76">
@@ -132,6 +135,7 @@
                         </div>
                         <div class="col-75">
                             <select id="subcategory" name="subcategory" required>
+                                <option value="">&nbsp;Odaberite broj ljudi</option>
                                 <optgroup label="Mala grupa">
                                     <option value="mg1">1-3 Osoba</option>
                                     <option value="mg2">3-5 Osoba</option>
@@ -194,10 +198,10 @@
 
     </main>
     <footer>
-        <div class="fcontainer" id="formID">
+        <div class="fcontainer">
             <div class="info">
                 <div class="finfodiv c1 l1 b1">
-                    <img src="../resursi/slike/logo_muezj_malii.png" alt="">
+                    <img src="./resursi/slike/logo_muezj_malii.png" alt="">
                 </div>
                 <div class="finfodiv c1 l1 b1">
                     <h3>
@@ -226,13 +230,17 @@
             <div class="copyright">
                 <div class="copyrighttext fcontainer">
                     <p>
-                        Copyright© 2015 - 2019 Muzej iluzija Zagreb | Cjelokupni sadržaj, svi tekstovi i fotografije,
-                        podliježu zakonu o autorskom pravu i srodnim pravima (Broj: 01-081-03-1344/2).
-                        Zabranjeno je korištenje i/ili prenošenje sadržaja bez pismene dozvole od strane tvrtke
-                        Mozgaonica d.o.o.
+                        &copy; 2024 Bartol Kolaković
+
                     </p>
+                    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+                        <img src="../resursi/slike/Cc_by-nc_icon.svg.png" alt="" style="width: 15vh;">
+                    </a>
+                    <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://spider.foi.hr/OWT/2024/zadaca_02/bkolakovi22/html/termini.html" target="_blank">
+                        <img src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png" alt="" style="width: 5vh;">
+                    </a>
                 </div>
-            </div>
+            </div>/
             <div class="socials">
 
                 <div class="socialIcons">
