@@ -204,7 +204,7 @@ section {
 .initialInfo {
     min-height: 20rem;
     background-color: rgba(0, 0, 0, 0.404);
-    background-image: url(../resursi/slike/main_bakcground.png);
+    background-image: url(/slike/main_bakcground.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -574,7 +574,7 @@ nav li a:hover::before {
 
 @media screen and (max-width : 850px) {
     .logo img {
-        content: url(../resursi/slike/logo_muezj_malii.png);
+        content: url(/slike/logo_muezj_malii.png);
         width: 100%;
     }
 
@@ -817,7 +817,7 @@ nav li a:hover::before {
 
     min-height: 20rem;
     background-color: rgba(0, 0, 0, 0.767);
-    background-image: url(../resursi/mi-img-google.png);
+    background-image: url(/slike/mi-img-google.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

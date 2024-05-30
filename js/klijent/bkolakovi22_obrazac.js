@@ -11,17 +11,18 @@ window.addEventListener("load", function(e) {
   Boxs();
   MultiList();
   text();
+  RangeSel();
   checkSubmit();
 });
 //#region Fname Lname
 function Fname() {
   const input = document.getElementById("fname");
-  console.log(input);
+  ////console.log(input);
   const label = document.querySelector(`label[for="${input.id}"]`);
-  console.log(label);
+  ////console.log(label);
 
   input.addEventListener("keyup", function() {
-    console.log(label);
+    ////console.log(label);
     checkName(input, label);
   });
 }
@@ -32,19 +33,21 @@ function checkName(input, label) {
     updateLabel(label);
     const errorMessage = "Polje obavezno";
     addErrorMessage(parentDiv, errorMessage);
+    return false;
   } else {
     resetLabel(label);
     removeErrorMessage(parentDiv);
+    return true;
   }
 }
 function Lname() {
   const input = document.getElementById("lname");
-  console.log(input);
+  ////console.log(input);
   const label = document.querySelector(`label[for="${input.id}"]`);
-  console.log(label);
+  ////console.log(label);
 
   input.addEventListener("keyup", function() {
-    console.log(label);
+    ////console.log(label);
     checkName(input, label);
   });
 }
@@ -53,50 +56,66 @@ function Lname() {
 //#region Email
 function email() {
   const input = document.getElementById("email");
-  console.log(input);
+  ////console.log(input);
   const label = document.querySelector(`label[for="${input.id}"]`);
-  console.log(label);
+  ////console.log(label);
 
   input.addEventListener("keyup", function() {
-    console.log(label);
+    ////console.log(label);
     checkEmail(input, label);
   });
 }
 
 function checkEmail(input, label) {
   const parentDiv = label.closest("div");
-  if (input.value.length == 0) {
+  const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (!input.value.trim()) {
+    removeErrorMessage(parentDiv);
     updateLabel(label);
     const errorMessage = "Potrebno je unjeti email adresu";
     addErrorMessage(parentDiv, errorMessage);
+    return false;
+  } else if (!regex.test(input.value)) {
+    removeErrorMessage(parentDiv);
+    updateLabel(label);
+    const errorMessage = "Email adresa nije ispravna";
+    addErrorMessage(parentDiv, errorMessage);
+    return false;
   } else {
     resetLabel(label);
     removeErrorMessage(parentDiv);
+    return true;
   }
 }
+
 //#endregion
 
 //#region BrojTele
 function BrojTele() {
   const input = document.getElementById("phone");
-  console.log(input);
+  ////console.log(input);
   const label = document.querySelector(`label[for="${input.id}"]`);
-  console.log(label);
+  ////console.log(label);
 
   input.addEventListener("keyup", function() {
-    console.log(label);
+    ////console.log(label);
     checkPhone(input, label);
   });
 }
 function checkPhone(input, label) {
   const parentDiv = label.closest("div");
-  if (input.value.length == 0) {
+  const regex = /^\d{3}-\d{7}$/;
+  if (!regex.test(input.value)) {
+    //console.log(regex.test(input.value));
     updateLabel(label);
     const errorMessage = "Potrebno je unjeti broj mobitela 999-9999999999";
     addErrorMessage(parentDiv, errorMessage);
+    return false;
   } else {
     resetLabel(label);
     removeErrorMessage(parentDiv);
+    return true;
   }
 }
 //#endregion
@@ -106,7 +125,7 @@ function Drzava() {
   const input = document.getElementById("country");
   const label = document.querySelector(`label[for="${input.id}"]`);
   input.addEventListener("mouseup", function() {
-    console.log(label);
+    ////console.log(label);
     checkList(input, label);
   });
 }
@@ -117,9 +136,11 @@ function checkList(input, label) {
     updateLabel(label);
     const errorMessage = "Potrebno je odabrati jednu opciju iz liste";
     addErrorMessage(parentDiv, errorMessage);
+    return false;
   } else {
     resetLabel(label);
     removeErrorMessage(parentDiv);
+    return true;
   }
 }
 //#endregion
@@ -147,9 +168,11 @@ function checkDate(input, label) {
     updateLabel(label);
     const errorMessage = "Potrebno je unjeti neki datum";
     addErrorMessage(parentDiv, errorMessage);
+    return false;
   } else {
     resetLabel(label);
     removeErrorMessage(parentDiv);
+    return true;
   }
 }
 //#endregion
@@ -159,7 +182,7 @@ function ListIskustva() {
   const input = document.getElementById("category");
   const label = document.querySelector(`label[for="${input.id}"]`);
   input.addEventListener("mouseup", function() {
-    console.log(label);
+    ////console.log(label);
     checkList(input, label);
   });
 }
@@ -167,16 +190,45 @@ function MultiList() {
   const input = document.getElementById("subcategory");
   const label = document.querySelector(`label[for="${input.id}"]`);
   input.addEventListener("mouseup", function() {
-    console.log(label);
-    checkList(input, label);
+    ////console.log(label);
+    checkMultiList(input, label);
   });
+}
+function checkMultiList(input, label) {
+  const parentDiv = label.closest("div");
+  const selectElement = document.getElementById("subcategory");
+  const optgroups = selectElement.getElementsByTagName("optgroup");
+
+  for (let i = 0; i < optgroups.length; i++) {
+    const options = optgroups[i].getElementsByTagName("option");
+    let isSelected = false;
+
+    for (let j = 0; j < options.length; j++) {
+      if (options[j].selected) {
+        isSelected = true;
+        break;
+      }
+    }
+
+    if (!isSelected) {
+      const errorMessage =
+        "Potrebno je uodabrati barem 1 opciju iz svake grupe";
+      addErrorMessage(parentDiv, errorMessage);
+      updateLabel(label);
+      return false;
+    }
+  }
+
+  resetLabel(label);
+  removeErrorMessage(parentDiv);
+  return true;
 }
 //#endregion
 
 //#region radioCheckBox
 function Radio() {
   const radios = form.querySelectorAll('input[type="radio"]');
-  console.log(radios);
+  //console.log(radios);
   const radioGroups = [
     ...new Set(Array.from(radios).map((radio) => radio.name)),
   ];
@@ -188,6 +240,7 @@ function Radio() {
   });
 }
 function checkRadioGroups(radios, radioGroups) {
+  let pass = false;
   radioGroups.forEach((group) => {
     const checkedRadio = Array.from(radios).find(
       (radio) => radio.name === group && radio.checked
@@ -205,6 +258,7 @@ function checkRadioGroups(radios, radioGroups) {
           }
         }
       });
+      pass = false;
     } else {
       const labels = Array.from(radios).filter((radio) => radio.name === group);
       labels.forEach((label) => {
@@ -217,12 +271,14 @@ function checkRadioGroups(radios, radioGroups) {
           }
         }
       });
+      pass = true;
     }
   });
+  return pass;
 }
 function Boxs() {
   const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-  console.log(checkboxes);
+  //console.log(checkboxes);
   const checkboxGroups = [
     ...new Set(Array.from(checkboxes).map((checkbox) => checkbox.name)),
   ];
@@ -235,6 +291,7 @@ function Boxs() {
 }
 
 function checkCheckboxGroups(checkboxes, checkboxGroups) {
+  let pass = false;
   checkboxGroups.forEach((group) => {
     const checkedCheckbox = Array.from(checkboxes).find(
       (checkbox) => checkbox.name === group && checkbox.checked
@@ -254,6 +311,7 @@ function checkCheckboxGroups(checkboxes, checkboxGroups) {
           }
         }
       });
+      pass = false;
     } else {
       const labels = Array.from(checkboxes).filter(
         (checkbox) => checkbox.name === group
@@ -268,84 +326,126 @@ function checkCheckboxGroups(checkboxes, checkboxGroups) {
           }
         }
       });
+      pass = true;
     }
   });
+  return pass;
 }
 //#endregion
 
 //#region textarea
 function text() {
   const input = document.getElementById("subject");
-  console.log(input);
+
+  //////console.log(input);
   const label = document.querySelector(`label[for="${input.id}"]`);
-  console.log(label);
+  //////console.log(label);
 
   input.addEventListener("keyup", function() {
-    console.log(label);
+    //////console.log(label);
     checkText(input, label);
   });
 }
 function checkText(input, label) {
   const parentDiv = label.closest("div");
+  const regex = /^(([A-Z][^<>\-#]*[.!?]\s*){1,4})$/;
   if (!input.value.trim()) {
+    removeErrorMessage(parentDiv);
     updateLabel(label);
     const errorMessage = "Potrebno je unjeti barem neki tekst";
     addErrorMessage(parentDiv, errorMessage);
+    return false;
+  } else if (!regex.test(input.value.trim())) {
+    removeErrorMessage(parentDiv);
+    updateLabel(label);
+    const errorMessage =
+      "Tekst mora sadržavati najviše 4 rečenice. Svaka rečenica mora početi velikim slovom i završiti s točkom, upitnikom ili uskličnikom.";
+    addErrorMessage(parentDiv, errorMessage);
+    return false;
   } else {
+    //console.log(regex.test(input.value.trim()));
     resetLabel(label);
     removeErrorMessage(parentDiv);
+    return true;
   }
 }
 //#endregion
 
+//#region Slideer
+function RangeSel() {
+  const input = document.getElementById("range");
+  const label = document.querySelector(`label[for="${input.id}"]`);
+  input.min = 0;
+  input.max = 5;
+
+  input.addEventListener("input", function() {
+    label.textContent = input.value;
+  });
+}
+//#endregion
+
 function checkSubmit() {
+  const form = document.getElementById("formID");
   form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    let passedCheck = true;
     e.preventDefault();
     let input = document.getElementById("fname");
     let label = document.querySelector(`label[for="${input.id}"]`);
-    checkName(input, label);
+    passedCheck = checkName(input, label);
+
     input = document.getElementById("lname");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkName(input, label);
+    passedCheck = checkName(input, label);
+
     input = document.getElementById("email");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkEmail(input, label);
+    passedCheck = checkEmail(input, label);
+
     input = document.getElementById("subject");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkText(input, label);
+    passedCheck = checkText(input, label);
+
     input = document.getElementById("country");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkList(input, label);
+    passedCheck = checkList(input, label);
+
     input = document.getElementById("date");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkDate(input, label);
+    passedCheck = checkDate(input, label);
+
     input = document.getElementById("category");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkList(input, label);
+    passedCheck = checkList(input, label);
+
     input = document.getElementById("subcategory");
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkList(input, label);
+    passedCheck = checkMultiList(input, label);
+
     const radios = form.querySelectorAll('input[type="radio"]');
-    console.log(radios);
+    //console.log(radios);
     const radioGroups = [
       ...new Set(Array.from(radios).map((radio) => radio.name)),
     ];
-    checkRadioGroups(radios, radioGroups);
+    passedCheck = checkRadioGroups(radios, radioGroups);
+
     const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-    console.log(checkboxes);
+    //console.log(checkboxes);
     const checkboxGroups = [
       ...new Set(Array.from(checkboxes).map((checkbox) => checkbox.name)),
     ];
-    checkCheckboxGroups(checkboxes, checkboxGroups);
+    passedCheck = checkCheckboxGroups(checkboxes, checkboxGroups);
     input = document.getElementById("phone");
-    console.log(input);
+    //////console.log(input);
     label = document.querySelector(`label[for="${input.id}"]`);
-    checkPhone(input, label);
+    passedCheck = checkPhone(input, label);
+
+    if (passedCheck) {
+      form.submit();
+    }
   });
-
-  form.submit();
 }
-
+//#region helperFunc
 function getLabel(id) {
   let label = document.querySelector(`label[for="${id}]`);
   return label;
@@ -359,24 +459,14 @@ function resetLabel(label) {
 }
 
 function addErrorMessage(parentDiv, errorMessage) {
-  // Check if an error message already exists
   const existingError = parentDiv.querySelector(".error-message");
-
-  // If an error message already exists, don't add another one
   if (existingError) {
     return;
   }
-
-  // Create a new div element for the error message
   const errorDiv = document.createElement("div");
-
-  // Add a class to the div so you can style it with CSS if needed
   errorDiv.className = "error-message";
-
-  // Set the error message
   errorDiv.innerText = errorMessage;
 
-  // Append the error message div to the end of the parent div
   parentDiv.appendChild(errorDiv);
 }
 
@@ -386,3 +476,4 @@ function removeErrorMessage(parentDiv) {
     parentDiv.removeChild(errorMessage);
   }
 }
+//#endregion

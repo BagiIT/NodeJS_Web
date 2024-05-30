@@ -5,7 +5,7 @@
     <title>Termini</title>
     <link rel="stylesheet" type="text/css" href="css/bkolakovi22test.css">
     <link rel="stylesheet" type="text/css" href="css/form.css">
-    <script src="js/bkolakovi22_obrazac.js"></script>
+    <script src="jsk/bkolakovi22_obrazac.js"></script>
     <meta charset="UTF-8">
     <meta name="author" content="Bartol Kolakovic">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +16,17 @@
         <header>
             <div class="logo">
                 <a href="/">
-                    <img src="resursi/slike/logo_muzej_veliki.png" alt="HomePage">
+                    <img src="slike/logo_muzej_veliki.png" alt="HomePage">
                 </a>
             </div>
             <nav>
                 <ul>
                     <li> <a href="/">Home</a> </li>
-                    <li> <a href="dokumentacija">Dokumentacija</a> </li>
-                    <li> <a href="oAutoru">O Autoru</a> </li>
-                    <li> <a href="tablica">Tablica</a> </li>
-                    <li> <a href="galerija">Galerija</a> </li>
-                    <li> <a href="termini">Termini</a> </li>
+                    <li> <a href="dok">Dokumentacija</a> </li>
+                    <li> <a href="oau">O Autoru</a> </li>
+                    <li> <a href="tab">Tablica</a> </li>
+                    <li> <a href="gal">Galerija</a> </li>
+                    <li> <a href="ter">Termini</a> </li>
                 </ul>
             </nav>
 
@@ -41,7 +41,7 @@
         <section class="content" id="form">
             <h2>Hhh</h2>
             <div class="container">
-                <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post" id="formID">
+                <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post" id="formID" novalidate>
                     <div class="row2">
                         <div class="col-25" id="labele">
                             <label for="fname"><strong>Ime</strong></label>
@@ -133,18 +133,18 @@
                             <label for="subcategory"><strong>Broj ljudi</strong></label>
                         </div>
                         <div class="col-75">
-                            <select id="subcategory" name="subcategory">
+                            <select id="subcategory" name="subcategory" multiple>
                                 <option value="">&nbsp;Odaberite broj ljudi</option>
-                                <optgroup label="Mala grupa">
+                                <optgroup label="Mala grupa" id="grup1">
                                     <option value="mg1">1-3 Osoba</option>
                                     <option value="mg2">3-5 Osoba</option>
                                     <option value="mg3">5-7 Osoba</option>
                                 </optgroup>
-                                <optgroup label="Srednja grupa">
+                                <optgroup label="Srednja grupa"id="grup2">
                                     <option value="sg1">7-10 Osoba</option>
                                     <option value="sg2">10-13 Osoba</option>
                                 </optgroup>
-                                <optgroup label="Velika grupa">
+                                <optgroup label="Velika grupa"id="grup3">
                                     <option value="sg1">13-16 Osoba</option>
                                     <option value="sg2">16-25 Osoba</option>
                                 </optgroup>
@@ -181,7 +181,7 @@
                             <label for="range"><strong>Ocjena usluge</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="range" id="range" name="range" min="1" max="5" value="2">
+                            <input type="range" id="range" name="range">
                         </div>
                     </div>
                     <div class="row2">
@@ -199,7 +199,7 @@
         <div class="fcontainer">
             <div class="info">
                 <div class="finfodiv c1 l1 b1">
-                    <img src="./resursi/slike/logo_muezj_malii.png" alt="">
+                    <img src="slike/logo_muezj_malii.png" alt="">
                 </div>
                 <div class="finfodiv c1 l1 b1">
                     <h3>
@@ -232,7 +232,7 @@
 
                     </p>
                     <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
-                        <img src="../resursi/slike/Cc_by-nc_icon.svg.png" alt="" style="width: 15vh;">
+                        <img src="slike/Cc_by-nc_icon.svg.png" alt="" style="width: 15vh;">
                     </a>
                     <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://spider.foi.hr/OWT/2024/zadaca_02/bkolakovi22/html/termini.html" target="_blank">
                         <img src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png" alt="" style="width: 5vh;">

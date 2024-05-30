@@ -2,9 +2,10 @@
 <html lang="hr">
 
 <head>
-    <title>Index</title>
-    <link rel="stylesheet" type="text/css" href="css/bkolakovi22test.css" id="desktop">
-    <script src="jsk/bkolakovi22.js"></script>
+    <title>Termini</title>
+    <link rel="stylesheet" type="text/css" href="css/bkolakovi22test.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <script src="jsk/bkolakovi22_obrazac.js"></script>
     <meta charset="UTF-8">
     <meta name="author" content="Bartol Kolakovic">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,6 @@
                     <li> <a href="tab">Tablica</a> </li>
                     <li> <a href="gal">Galerija</a> </li>
                     <li> <a href="ter">Termini</a> </li>
-                    <li> <button id="btnSwitch">prebaci na mobilnu verziju</button> </li>
                 </ul>
             </nav>
 
@@ -36,126 +36,51 @@
                 <span class="second-line"></span>
                 <span class="third-line"></span>
             </div>
-
         </header>
-        <section class="content">
-            <div class="content initialInfo">
-                <h1>
-                    MUZEJ ILUZIJA
-                </h1>
-            </div>
-            <div class="content">
-                <div class="content news">
-                    <h1 class="newsH"> O NAMA</h1>
-                    <p class="newsP">
-                        Muzej Iluzija u Zagrebu jedinstven je i interaktivan muzej koji nudi fascinantno iskustvo
-                        optičkih iluzija, holograma i drugih zbunjujućih izložaka. Smješten u srcu Zagreba, ovaj muzej
-                        poziva posjetitelje svih uzrasta da istraže svijet percepcije i kako mozak može biti prevaren
-                        vizualnim i osjetilnim efektima. Muzej prikazuje razne instalacije i izložbe osmišljene kako bi
-                        izazvale osjetila i pružile zabavno i edukativno iskustvo. Bilo da je riječ o prolasku kroz
-                        vrtložni tunel, istraživanju izobličenih soba ili interakciji s optičkim iluzijama,
-                        posjetitelji će otići s novim uvažavanjem složenosti percepcije i čuda ljudskog uma.
-                        <span style="color: rgb(22, 152, 145);">#muzejiluzija</span>
-                    </p>
-                </div>
-            </div>
 
-            <div class="containerReklama">
-                <div class="container">
-                    <div class="row">
-                        <div class="reklama_img1">
-                            <img src="slike/mi-zagreb-ta-excellence-TXT-hr.png" alt="" width="721"
-                                height="177">
+        <section class="content" id="form">
+            <h2>Hhh</h2>
+            <div class="container">
+                <form action="http://spider.foi.hr/owt/izlozba" method="post" id="formID" novalidate>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="fname"><strong>Ime</strong></label>
                         </div>
-                        <div class="reklama_img2">
-                            <a href="https://www.tripadvisor.com/Attraction_Review-g294454-d8421378-Reviews-Museum_of_Illusions-Zagreb_Central_Croatia.html"
-                                target="_blank" rel="noopener">
-                                <img src="slike/main_add1.png" alt="" width="177" height="177">
-                            </a>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Ime..">
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <section class="container mapC">
-                <div class="bg-img_con">
-                    <span class="bg_img" style="background-image: url(slike/bg_map.png);"></span>
-                </div>
-                <div class="contianer mapC_g">
-                    <h3 class="mapC_g_heading">Čekamo Vas u samom centru Zagreba!</h3>
-                    <div class="mapC_embed" id="g_map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9117080899073!2d15.96387237671734!3d45.813026610096216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6e3c627ff85%3A0xd304faa44d4cb4ec!2sMuseum%20of%20Illusions!5e0!3m2!1sen!2shr!4v1713809664598!5m2!1sen!2shr"
-                            height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="lname"><strong>Prezime</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Prezime..">
+                        </div>
                     </div>
-                </div>
-            </section>
-            <div class="contenrFiller"></div>
-
-            <div class="content cards">
-                <div class="row">
-                    <div class="finfodiv c1 l1 b1">
-                        <article class="c-card">
-                            <header class="c-card_header">
-                                <img src="slike/NewsDard1.png" alt="" class="c-card_image" id="imageNews1">
-                            </header>
-                            <div class="c-card_body">
-                                <h2 class="c-card_title">
-                                    <a href="detalji" class="c-card_title_link">Preko 70 eksponata</a>
-                                </h2>
-                                <div class="c-card_text">
-                                    <p>
-                                        Uživajte u najvećoj zbirci holograma u ovom dijelu Europe, zagledajte su i svaku
-                                        optičku iluziju i dobro
-                                        promotrite svaku instalaciju.
-                                    </p>
-                                    <a href="det" class="c-card_findMore">Saznaj Vise!</a>
-                                </div>
-                            </div>
-                        </article>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="lname"><strong>Prezime</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Prezime..">
+                        </div>
                     </div>
-                    <div class="finfodiv c1 l1 b1">
-                        <article class="c-card">
-                            <header class="c-card_header">
-                                <img src="slike/NewsCard2.png" alt="" class="c-card_image" id="imagenews2">
-                            </header>
-                            <div class="c-card_body">
-                                <h2 class="c-card_title">
-                                    <a href="/" class="c-card_title_link">Planirajte grupne posjete</a>
-                                </h2>
-                                <div class="c-card_text">
-                                    <p>
-                                        Osim grupnih posjeta, Muzej ilizija nudi mogućnost organiziranja nezaboravnih
-                                        rođendanskih proslava
-                                        ili evenata. Odaberite drugačije!
-                                    </p>
-                                    <a href="/" class="c-card_findMore">Saznaj Vise!</a>
-                                </div>
-                            </div>
-                        </article>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="lname"><strong>Prezime</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Prezime..">
+                        </div>
                     </div>
-                    <div class="finfodiv c1 l1 b1">
-                        <article class="c-card">
-                            <header class="c-card_header">
-                                <a href="/" class="c-card_image_link"> </a>
-                                <img src="slike/NewsCard3.png" alt="" class="c-card_image" id="imageNews3">
-                            </header>
-                            <div class="c-card_body">
-                                <h2 class="c-card_title">
-                                    <a href="/" class="c-card_title_link">Iluzije za ponijeti</a>
-                                </h2>
-                                <div class="c-card_text">
-                                    <p>
-                                        Odaberite neku od Dilemma Games igara, kupite didaktičku igračku za svoje
-                                        najmlađe, 3D rasvjetu, majicu, olovku ili bilježnicu!
-                                    </p>
-                                    <a href="/" class="c-card_findMore">Saznaj Vise!</a>
-                                </div>
-                            </div>
-                        </article>
+                    <div class="row2">
+                        <input type="submit" value="Pošalji">
                     </div>
-                </div>
+                    <div class="row2">
+                        <input type="reset" value="Resetiraj">
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -199,7 +124,7 @@
                     <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
                         <img src="slike/Cc_by-nc_icon.svg.png" alt="" style="width: 15vh;">
                     </a>
-                    <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://spider.foi.hr/OWT/2024/zadaca_02/bkolakovi22/index.html" target="_blank">
+                    <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://spider.foi.hr/OWT/2024/zadaca_02/bkolakovi22/html/termini.html" target="_blank">
                         <img src="https://spider.foi.hr/OWT/materijali/slike/HTML5.png" alt="" style="width: 5vh;">
                     </a>
                 </div>

@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {});
 window.addEventListener("load", function(e) {
-  loadCookie();
-  switchView();
+  var filename = location.href.split("/").slice(-1);
+  console.log(filename);
+  if (filename == "") {
+    loadCookie();
+    switchView();
+  }
 });
 
 function loadCookie() {

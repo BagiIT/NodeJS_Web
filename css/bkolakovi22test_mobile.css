@@ -181,7 +181,7 @@ section {
 .initialInfo {
     min-height: 20rem;
     background-color: rgba(0, 0, 0, 0.404);
-    background-image: url(../resursi/slike/main_bakcground.png);
+    background-image: url(/slike/main_bakcground.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -496,7 +496,7 @@ nav li a:hover::before {
     float: right;
 }
     .logo img {
-        content: url(../resursi/slike/logo_muezj_malii.png);
+        content: url(/slike/logo_muezj_malii.png);
         width: 100%;
     }
 
