@@ -3,9 +3,9 @@
 
 <head>
     <title>Termini</title>
-    <link rel="stylesheet" type="text/css" href="../css/bkolakovi22test.css">
-    <link rel="stylesheet" type="text/css" href="../css/form.css">
-    <script src="./js/bkolakovi22.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bkolakovi22test.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <script src="js/bkolakovi22_obrazac.js"></script>
     <meta charset="UTF-8">
     <meta name="author" content="Bartol Kolakovic">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,18 @@
     <main>
         <header>
             <div class="logo">
-                <a href="../index.html">
-                    <img src="../resursi/slike/logo_muzej_veliki.png" alt="HomePage">
+                <a href="/">
+                    <img src="resursi/slike/logo_muzej_veliki.png" alt="HomePage">
                 </a>
             </div>
             <nav>
                 <ul>
-                    <li> <a href="../index.html">Home</a> </li>
-                    <li> <a href="../html/dokumentacija.html">Dokumentacija</a> </li>
-                    <li> <a href="../html/oAutoru.html">O Autoru</a> </li>
-                    <li> <a href="../html/tablica.html">Tablica</a> </li>
-                    <li> <a href="../html/galerija.html">Galerija</a> </li>
-                    <li> <a href="../html/termini.html">Termini</a> </li>
+                    <li> <a href="/">Home</a> </li>
+                    <li> <a href="dokumentacija">Dokumentacija</a> </li>
+                    <li> <a href="oAutoru">O Autoru</a> </li>
+                    <li> <a href="tablica">Tablica</a> </li>
+                    <li> <a href="galerija">Galerija</a> </li>
+                    <li> <a href="termini">Termini</a> </li>
                 </ul>
             </nav>
 
@@ -41,29 +41,29 @@
         <section class="content" id="form">
             <h2>Hhh</h2>
             <div class="container">
-                <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post">
+                <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post" id="formID">
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="fname"><strong>Ime</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="Ime.." required>
+                            <input type="text" id="fname" name="firstname" placeholder="Ime..">
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="lname"><strong>Prezime</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="lname" name="lastname" placeholder="Prezime.." required>
+                            <input type="text" id="lname" name="lastname" placeholder="Prezime..">
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="country"><strong>Država</strong></label>
                         </div>
                         <div class="col-75">
-                            <select id="country" name="country" required>
+                            <select id="country" name="country">
                                 <option value="">&nbsp;Odaberite državu</option>
                                 <option value="Cro">Hrvatska</option>
                                 <option value="Srb">Srbija</option>
@@ -72,20 +72,19 @@
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="date"><strong>Datum termina</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="date" id="date" name="date" value="" min="2024-01-01" max="2030-12-31"
-                                required>
+                            <input type="date" id="date" name="date" value="" min="2024-01-01" max="2030-12-31">
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="category"><strong>Iskustvo</strong></label>
                         </div>
                         <div class="col-75">
-                            <select id="category" name="category" required>
+                            <select id="category" name="category">
                                 <option value="">&nbsp;Odaberite paket</option>
                                 <option value="SI">Soba iluzija</option>
                                 <option value="BSI">Samo izlog bez sobe iluzija</option>
@@ -94,22 +93,22 @@
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label><strong>Osoba</strong></label>
                         </div>
                         <div class="col-75">
                             <div class="col-76">
                                 <label for="optionO1">Privatna osoba</label>
-                                <input type="radio" id="optionO1" name="optionO" value="privO" required>
+                                <input type="radio" id="optionO1" name="optionO" value="privO">
                             </div>
                             <div class="col-76">
                                 <label for="optionO2">Javna osoba</label>
-                                <input type="radio" id="optionO2" name="optionO" value="javO" required>
+                                <input type="radio" id="optionO2" name="optionO" value="javO">
                             </div>
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label><strong>Posebni Zahjevi</strong></label>
                         </div>
                         <div class="col-75">
@@ -130,11 +129,11 @@
                     </div>
 
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="subcategory"><strong>Broj ljudi</strong></label>
                         </div>
                         <div class="col-75">
-                            <select id="subcategory" name="subcategory" required>
+                            <select id="subcategory" name="subcategory">
                                 <option value="">&nbsp;Odaberite broj ljudi</option>
                                 <optgroup label="Mala grupa">
                                     <option value="mg1">1-3 Osoba</option>
@@ -153,24 +152,23 @@
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="email"><strong>Email</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="email" id="email" name="email" placeholder="Email.." required>
+                            <input type="email" id="email" name="email" placeholder="Email..">
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="phone"><strong>Broj telefona</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="tel" id="phone" name="phone" placeholder="broj telefona.."
-                                pattern="[0-9]{3}-[0-9]{1'}" required>
+                            <input type="tel" id="phone" name="phone" placeholder="broj telefona..">
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="subject"><strong> Poruka</strong></label>
                         </div>
                         <div class="col-75">
@@ -179,7 +177,7 @@
                         </div>
                     </div>
                     <div class="row2">
-                        <div class="col-25">
+                        <div class="col-25" id="labele">
                             <label for="range"><strong>Ocjena usluge</strong></label>
                         </div>
                         <div class="col-75">
