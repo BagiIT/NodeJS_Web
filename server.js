@@ -73,7 +73,8 @@ server.get("/brisi", (req, res) => {
 //#region REST 8.
 
 server.get("/owt/izlozba", (req, res) => {
-  let json = JSON.parse(fs.readFileSync(__dirname + "/resursi/izlozba.json"));
+  let csv = fs.readFileSync(__dirname + "/resursi/izlozba.csv", "utf-8");
+  let json = converter.csvToJsonArr(csv);
   //console.log(json);
   res.type("json");
   if (json == undefined) {
