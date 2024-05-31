@@ -1,10 +1,9 @@
 const express = require("express");
 const fs = require("fs");
 const server = express();
-const username = "bkolakovi22";
+const username = "bagi_it";
 const port = require("./js/server/getPorts.js").getPort(username);
 const HelperConverter = require("./js/server/Helper.js");
-const { isNullOrUndefined } = require("util");
 const converter = new HelperConverter();
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());

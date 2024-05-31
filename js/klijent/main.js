@@ -64,12 +64,10 @@ function setView(stateView) {
   let button = document.getElementById("btnSwitch");
   let style = document.getElementById("desktop");
   if (stateView == 1) {
-    //style.setAttribute("href", "css/bkolakovi22test.css");
     document.body.classList.remove("mobile");
     button.textContent = "prebaci na mobilnu verziju";
     setCookie("state", stateView);
   } else {
-    //style.setAttribute("href", "css/bkolakovi22test_mobile.css");
     document.body.classList.add("mobile");
     button.textContent = "vrati na stolnu verziju";
     setCookie("state", stateView);
