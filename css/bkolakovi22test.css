@@ -33,6 +33,102 @@ body {
     min-height: 100vh;
 }
 
+.mobile{
+    width: 698px;
+
+        .c1 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .logo img {
+            content: url(/slike/logo_muezj_malii.png);
+            width: 100%;
+        }
+    
+        .initialInfo>h1 {
+            font-size: 60px;
+        }
+        nav {
+    
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 100%;
+            height: 0px;
+            background-color: rgb(22, 22, 22);
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 0;
+            transition: height .5s ease-in-out;
+    
+        }
+    
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+    
+        }
+    
+        nav li a {
+            font-size: 1.2rem;
+        }
+    
+    
+        .logo {
+            left: 2rem;
+            transform: translate(0, -50%);
+        }
+    
+        .logo img {
+            width: 70px;
+        }
+    
+        .menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+    
+        .menu-btn span {
+            width: 30px;
+            height: 2px;
+            background-color: white;
+            transform-origin: left;
+            transition: 0.5s ease;
+        }
+    
+        .menu-btn input {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            z-index: 2;
+            cursor: pointer;
+            appearance: none;
+    
+        }
+    
+        .menu-btn input:checked~.second-line {
+            opacity: 0;
+        }
+    
+        .menu-btn input:checked~.first-line {
+            transform: rotate(45deg);
+        }
+    
+        .menu-btn input:checked~.third-line {
+            transform: rotate(-45deg);
+        }
+    
+        header:has(input:checked)>nav {
+            height: calc(70vh - 80%);
+            opacity: 1;
+        }
+}
+
 main {
     flex-grow: 1;
 }
@@ -479,7 +575,14 @@ section {
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .dropdown-content {
+        position: absolute;
+        display: none;
+    }
 
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
 }
 
@@ -537,6 +640,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1rem;
     margin-top: 0;
     margin-bottom: 0;
@@ -670,7 +774,7 @@ nav li a:hover::before {
     }
 
     header:has(input:checked)>nav {
-        height: calc(50vh - 80%);
+        height: calc(70vh - 80%);
         opacity: 1;
     }
 
@@ -695,6 +799,14 @@ nav li a:hover::before {
     .reklama_img2>a>img {
         max-width: 90px;
         height: auto;
+    }
+    .dropdown-content {
+        position: static;
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 
 }
@@ -955,4 +1067,43 @@ nav li a:hover::before {
 
     }
 
+}
+.dropbtn {
+    background-color: transparent; /* Match the nav background */
+    color: white; /* Match the nav link color */
+    padding: 14px 16px; /* Match the nav link padding */
+    font-size: 14px; /* Match the nav link font size */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Match the nav link letter spacing */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2b3035; /* Match the header background color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: add shadow for dropdown */
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white; /* Match the nav link color */
+    padding: 12px 16px; /* Match the nav link padding */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Light grey background on hover */
+    color: black; /* Change text color on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41; /* Darker background on hover */
 }

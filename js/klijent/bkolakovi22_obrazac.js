@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {});
-window.addEventListener("load", function(e) {
+document.addEventListener("DOMContentLoaded", function () {});
+window.addEventListener("load", function (e) {
   Fname();
   Lname();
   email();
@@ -21,7 +21,7 @@ function Fname() {
   const label = document.querySelector(`label[for="${input.id}"]`);
   ////console.log(label);
 
-  input.addEventListener("keyup", function() {
+  input.addEventListener("keyup", function () {
     ////console.log(label);
     checkName(input, label);
   });
@@ -46,7 +46,7 @@ function Lname() {
   const label = document.querySelector(`label[for="${input.id}"]`);
   ////console.log(label);
 
-  input.addEventListener("keyup", function() {
+  input.addEventListener("keyup", function () {
     ////console.log(label);
     checkName(input, label);
   });
@@ -60,7 +60,7 @@ function email() {
   const label = document.querySelector(`label[for="${input.id}"]`);
   ////console.log(label);
 
-  input.addEventListener("keyup", function() {
+  input.addEventListener("keyup", function () {
     ////console.log(label);
     checkEmail(input, label);
   });
@@ -98,7 +98,7 @@ function BrojTele() {
   const label = document.querySelector(`label[for="${input.id}"]`);
   ////console.log(label);
 
-  input.addEventListener("keyup", function() {
+  input.addEventListener("keyup", function () {
     ////console.log(label);
     checkPhone(input, label);
   });
@@ -124,7 +124,7 @@ function checkPhone(input, label) {
 function Drzava() {
   const input = document.getElementById("country");
   const label = document.querySelector(`label[for="${input.id}"]`);
-  input.addEventListener("mouseup", function() {
+  input.addEventListener("mouseup", function () {
     ////console.log(label);
     checkList(input, label);
   });
@@ -158,7 +158,7 @@ function Datum() {
   input.min = oneEarly.toISOString().split("T")[0];
   input.max = twoLaterDate.toISOString().split("T")[0];
 
-  input.addEventListener("change", function() {
+  input.addEventListener("change", function () {
     checkDate(input, label);
   });
 }
@@ -181,7 +181,7 @@ function checkDate(input, label) {
 function ListIskustva() {
   const input = document.getElementById("category");
   const label = document.querySelector(`label[for="${input.id}"]`);
-  input.addEventListener("mouseup", function() {
+  input.addEventListener("mouseup", function () {
     ////console.log(label);
     checkList(input, label);
   });
@@ -189,7 +189,7 @@ function ListIskustva() {
 function MultiList() {
   const input = document.getElementById("subcategory");
   const label = document.querySelector(`label[for="${input.id}"]`);
-  input.addEventListener("mouseup", function() {
+  input.addEventListener("mouseup", function () {
     ////console.log(label);
     checkMultiList(input, label);
   });
@@ -234,7 +234,7 @@ function Radio() {
   ];
 
   radios.forEach((radio) => {
-    radio.addEventListener("click", function() {
+    radio.addEventListener("click", function () {
       checkRadioGroups(radios, radioGroups);
     });
   });
@@ -284,7 +284,7 @@ function Boxs() {
   ];
 
   checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("click", function() {
+    checkbox.addEventListener("click", function () {
       checkCheckboxGroups(checkboxes, checkboxGroups);
     });
   });
@@ -341,7 +341,7 @@ function text() {
   const label = document.querySelector(`label[for="${input.id}"]`);
   //////console.log(label);
 
-  input.addEventListener("keyup", function() {
+  input.addEventListener("keyup", function () {
     //////console.log(label);
     checkText(input, label);
   });
@@ -378,7 +378,7 @@ function RangeSel() {
   input.min = 0;
   input.max = 5;
 
-  input.addEventListener("input", function() {
+  input.addEventListener("input", function () {
     label.textContent = input.value;
   });
 }
@@ -386,7 +386,7 @@ function RangeSel() {
 
 function checkSubmit() {
   const form = document.getElementById("formID");
-  form.addEventListener("submit", function(e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     let passedCheck = true;
     e.preventDefault();

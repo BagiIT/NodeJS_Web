@@ -2,10 +2,10 @@
 <html lang="hr">
 
 <head>
-    <title>Termini</title>
+    <title>Obrazac Validacija</title>
     <link rel="stylesheet" type="text/css" href="css/bkolakovi22test.css">
     <link rel="stylesheet" type="text/css" href="css/form.css">
-    <script src="jsk/bkolakovi22.js"></script>
+    <script src="jsk/bkolakovi22_obrazac.js"></script>
     <meta charset="UTF-8">
     <meta name="author" content="Bartol Kolakovic">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,38 +50,147 @@
         <section class="content" id="form">
             <h2>Hhh</h2>
             <div class="container">
-                <form action="/owt/izlozba" method="post" id="formID" novalidate>
+                <form action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post" id="formID" novalidate>
                     <div class="row2">
                         <div class="col-25" id="labele">
-                            <label for="redniBroj"><strong>Redni broj</strong></label>
+                            <label for="fname"><strong>Ime</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="number" id="redniBroj" name="Redni_broj" placeholder="Redni broj.." min="0">
+                            <input type="text" id="fname" name="firstname" placeholder="Ime..">
                         </div>
                     </div>
                     <div class="row2">
                         <div class="col-25" id="labele">
-                            <label for="nazivPrimjerka"><strong>Naziv primjerka</strong></label>
+                            <label for="lname"><strong>Prezime</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="nazivPrimjerka" name="Naziv_primjerka" placeholder="Naziv Primjerka..">
+                            <input type="text" id="lname" name="lastname" placeholder="Prezime..">
                         </div>
                     </div>
                     <div class="row2">
                         <div class="col-25" id="labele">
-                            <label for="opis"><strong> Opis</strong></label>
+                            <label for="country"><strong>Država</strong></label>
                         </div>
                         <div class="col-75">
-                            <textarea id="subject" name="Opis" placeholder="Opis.."
+                            <select id="country" name="country">
+                                <option value="">&nbsp;Odaberite državu</option>
+                                <option value="Cro">Hrvatska</option>
+                                <option value="Srb">Srbija</option>
+                                <option value="Bih">Bosna</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="date"><strong>Datum termina</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="date" id="date" name="date" value="" min="2024-01-01" max="2030-12-31">
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="category"><strong>Iskustvo</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <select id="category" name="category">
+                                <option value="">&nbsp;Odaberite paket</option>
+                                <option value="SI">Soba iluzija</option>
+                                <option value="BSI">Samo izlog bez sobe iluzija</option>
+                                <option value="Sve" selected>Cijeli paket</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label><strong>Osoba</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <div class="col-76">
+                                <label for="optionO1">Privatna osoba</label>
+                                <input type="radio" id="optionO1" name="optionO" value="privO">
+                            </div>
+                            <div class="col-76">
+                                <label for="optionO2">Javna osoba</label>
+                                <input type="radio" id="optionO2" name="optionO" value="javO">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label><strong>Posebni Zahjevi</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <div class="col-76">
+                                <label for="choice1">Vodič</label>
+                                <input type="checkbox" id="choice1" name="choices[]" value="vodic">
+                            </div>
+                            <div class="col-76">
+                                <label for="choice2">Osoba u kolicima</label>
+                                <input type="checkbox" id="choice2" name="choices[]" value="kolica">
+                            </div>
+                            <div class="col-76">
+                                <label for="choice3">Osoba s vidnim i slušnim problemima</label>
+                                <input type="checkbox" id="choice3" name="choices[]" value="OkoUhoP">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="subcategory"><strong>Broj ljudi</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <select id="subcategory" name="subcategory" multiple>
+                                <option value="">&nbsp;Odaberite broj ljudi</option>
+                                <optgroup label="Mala grupa" id="grup1">
+                                    <option value="mg1">1-3 Osoba</option>
+                                    <option value="mg2">3-5 Osoba</option>
+                                    <option value="mg3">5-7 Osoba</option>
+                                </optgroup>
+                                <optgroup label="Srednja grupa"id="grup2">
+                                    <option value="sg1">7-10 Osoba</option>
+                                    <option value="sg2">10-13 Osoba</option>
+                                </optgroup>
+                                <optgroup label="Velika grupa"id="grup3">
+                                    <option value="sg1">13-16 Osoba</option>
+                                    <option value="sg2">16-25 Osoba</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="email"><strong>Email</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="email" id="email" name="email" placeholder="Email..">
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="phone"><strong>Broj telefona</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <input type="tel" id="phone" name="phone" placeholder="broj telefona..">
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-25" id="labele">
+                            <label for="subject"><strong> Poruka</strong></label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Posebna poruka.."
                                 style="height:100px"></textarea>
                         </div>
                     </div>
                     <div class="row2">
                         <div class="col-25" id="labele">
-                            <label for="date"><strong>Datum</strong></label>
+                            <label for="range"><strong>Ocjena usluge</strong></label>
                         </div>
                         <div class="col-75">
-                            <input type="date" id="date" name="Datum" value="" min="2024-01-01" max="2030-12-31">
+                            <input type="range" id="range" name="range">
                         </div>
                     </div>
                     <div class="row2">
