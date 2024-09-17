@@ -1,9 +1,4 @@
-import { injectSpeedInsights } from "@vercel/speed-insights";
 document.addEventListener("DOMContentLoaded", function () {});
-injectSpeedInsights();
-
-import { inject } from "@vercel/analytics";
-inject();
 window.addEventListener("load", function (e) {
   var filename = location.href.split("/").slice(-1);
   console.log(filename);
