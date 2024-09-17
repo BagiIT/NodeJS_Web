@@ -1,3 +1,4 @@
+import { injectSpeedInsights } from "@vercel/speed-insights";
 document.addEventListener("DOMContentLoaded", function () {});
 window.addEventListener("load", function (e) {
   var filename = location.href.split("/").slice(-1);
@@ -11,6 +12,7 @@ window.addEventListener("load", function (e) {
     ConfirmWindow();
     Popuni();
   }
+  injectSpeedInsights();
 });
 
 function loadCookie() {
